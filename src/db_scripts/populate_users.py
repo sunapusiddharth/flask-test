@@ -15,7 +15,9 @@ connection.autocommit = True
 
 users = [None] * 10000
 
-print("users=",len(users))
+print("users=", len(users))
+
+
 def as_array(l):
     l2str = ','.join('"{}"'.format(x) for x in l)
     return '{{{}}}'.format(l2str)
@@ -34,20 +36,12 @@ for user in users:
     userObject["user_id"] = user_id
     # print("Single object=", userObject)
     userObjects.append(userObject)
-print("userObjects=",len(userObjects))
+print("userObjects=", len(userObjects))
 with connection.cursor() as cursor:
     for user in userObjects:
         try:
-            cursor.execute('''SELECT id from issues where random() < 0.01 limit 1;''')
-            random_created_by = cursor.fetchone()[0]
-            cursor.execute('''SELECT id from issues where random() < 0.01 limit 3;''')
-            random_assigned_to = list(cursor.fetchone())
-            print("random_created_by=",random_created_by)
-            print("random_assigned_to=",random_assigned_to)
-            user['user_id'] =  str(user['user_id'])
-            user['birthdate'] =  str(user['birthdate'])
-            user['assigned_to'] =  random_assigned_to
-            user['created_by'] =  random_created_by
+            user['user_id'] = str(user['user_id'])
+            user['birthdate'] = str(user['birthdate'])
             print(user['birthdate'])
             cursor.execute('''
                 INSERT INTO users VALUES (
@@ -64,8 +58,7 @@ with connection.cursor() as cursor:
                     %(address)s,
                     %(mail)s,
                     %(birthdate)s,
-                    %(assigned_to)s,
-                    %(created_by)s
+                    %(user_type)s
                 );
             ''', {
                 **user

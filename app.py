@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import os
 from werkzeug.exceptions import BadRequest
-import './src/routes/users.py'
+# import './src/routes/users.py'
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:Sidhu@9693@localhost:5432/news?gssencmode=disable"
