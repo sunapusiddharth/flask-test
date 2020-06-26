@@ -1,0 +1,17 @@
+journal-id = abbr
+journal-title = journal-title
+issn [epub,ppub]
+publisher-name
+article-title
+contrib-type-author = authors=[name,type]
+aff affiliations
+publication-year
+archival-date
+recieved
+rev-record
+accepted
+<permission>
+abstract
+ref-count
+page-count
+

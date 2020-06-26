@@ -1,0 +1,6 @@
+discipline -> Journals ->Articles ->
+
+journals : profiels,editor spotlight,special issues,guidelines,editorial board,databases and indexing
+
+Article : abstract , introduction , preliminaries, conclusions data availability conflicts of iterest references copyright download citation 
+download other formats order printed copies 
